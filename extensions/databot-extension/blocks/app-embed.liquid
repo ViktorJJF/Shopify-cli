@@ -1,0 +1,30 @@
+{%- if block.settings.token != blank %}
+<script
+      defer
+      type="text/javascript"
+      src="https://databot-api-2.herokuapp.com/dist_files/databot.js"
+      id="749"
+      bot="{{ block.settings.token }}"
+    ></script>
+{%- endif %}
+
+
+{% schema %}
+{
+  "name": "Databot Widget",
+  "target": "body",
+  "stylesheet": "image-gallery.css",
+  "javascript": "databot.js",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "ID del bot"
+    },
+    {
+      "type": "text",
+      "id": "token",
+      "label": "Token del bot"
+    }]
+}
+{% endschema %}
